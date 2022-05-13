@@ -10,11 +10,20 @@ function getFetch(){
       .then(res => res.json()) // parse response as JSON
       .then(data => {
         console.log(data)
+        if(data[0].name.includes('(') && !data[1].name.includes('(')) {
+          document.querySelector('h2').innerText = data[1].name
+          document.querySelector('img').src = data[1].photoUrl
+          document.querySelector('#ally').innerText = data[1].allies
+          document.querySelector('#enemy').innerText = data[1].enemies
+          document.querySelector('#affiliation').innerText = data[1].affiliation
+        }
+        else{
         document.querySelector('h2').innerText = data[0].name
         document.querySelector('img').src = data[0].photoUrl
         document.querySelector('#ally').innerText = data[0].allies
         document.querySelector('#enemy').innerText = data[0].enemies
         document.querySelector('#affiliation').innerText = data[0].affiliation
+        }
       })
       .catch(err => {
           console.log(`error ${err}`)

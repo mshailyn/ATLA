@@ -6,6 +6,9 @@
 *{
   box-sizing: border-box;
 }
+html{
+  font-size: 62.5%;
+}
 
 h3{
   margin: 0;
@@ -14,28 +17,70 @@ h3{
 #ally, #enemy, #affiliation{
   font-weight: 400;
 }
+
+html,body,h1,h2,h3,h4,h4,h6,section,div{
+  margin: 0;
+  padding: 0;
+}
 /******************************************
 /* LAYOUT
 /*******************************************/
-body{
+#bg {
+  background: url("../img/bg.jpeg") center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.main{
+  background: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  padding: 1rem;
+  /* width: 40rem */
 }
 
-section{
+.subsection {
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
 }
+
 img{
   display: block;
   margin: 0;
   width: 250px;
 }
 
+h1{
+  font-size: 4rem;
+}
+
+h2{
+  font-size: 3rem;
+}
+
+h3{
+  font-size: 3rem;
+}
+
+input{
+  height: 2.5rem;
+  width: 20rem;
+  font-size: 1.5rem
+}
+
+button{
+  height: 2.5rem;
+  font-size: 1.5rem;
+}
 
 /******************************************
 /* ADDITIONAL STYLES

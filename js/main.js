@@ -2,6 +2,7 @@ document.querySelector('body').addEventListener('mouseover', playAudioStart)
 document.querySelector('a').addEventListener('click', muteOrPlay)
 const muteButton = document.getElementById('mute')
 
+
 function muteOrPlay(){
   if(muteButton.classList.contains('fa-volume-high')){
     muteButton.classList.toggle('fa-volume-high')

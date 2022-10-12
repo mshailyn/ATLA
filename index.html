@@ -1,27 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="retro">
 	<head>
     	<meta charset="utf-8">
-    	<meta name="description" content="This is where your description goes">
+    	<meta name="description" content="Database on Avatar the Last Airbender Characters">
     	<meta name="keywords" content="one, two, three">
 
 		<title>ATLA Database</title>
-
+		<!-- External Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 		<!-- external CSS link -->
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
+		<link href="https://cdn.jsdelivr.net/npm/daisyui@2.31.0/dist/full.css" rel="stylesheet" type="text/css" />
+		<script src="https://cdn.tailwindcss.com"></script>
+		<script src="https://kit.fontawesome.com/854239efb5.js" crossorigin="anonymous"></script>
+		<script>
+			tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						darkbrown: '#3E2C16',
+					},
+					fontFamily: {
+					'ancient': ['"Cinzel"', ' serif'],
+					},
+					// Define animation class
+					animation: {
+						'ltr-linear-infinite': 'move-bg 160s linear infinite',
+					},
+					// Define keyframes
+					keyframes: {
+						'move-bg': {
+						'0%':   { 'background-position': '0 0' },
+						'100%': { 'background-position': '2870px 0'}
+						}
+					}
+				}
+			}
+			}
+  		</script>
 	</head>
-	<body  id="bg">
-		<section class="main">
-			<h1>Avatar the Last Airbender Database</h1>
-			<div><input type="text" id="characterName" placeholder="Character Name">
-			<button type="button" name="button">Get Character</button></div>
-			<h2>Name?</h2>
-			<img src="img/atla.jpeg" alt="Avatar the Last Airbender">
-			<section class="subsection"><h3>Allies:</h3><h3 id="ally"></h3></section>
-			<section class="subsection"><h3>Enemies:</h3><h3 id="enemy"></h3></section>
-			<section class="subsection"><h3>Affiliation:</h3><h3 id="affiliation"></h3></section>
-		</section>
+	
+	<body class="font-ancient w-screen h-screen" onmouseover="playAudioStart()">
+		<main class="flex justify-center items-center h-full w-screen items-center bg-cover bg-repeat bg-center animate-ltr-linear-infinite" style="background-image: url(img/bg.jpeg)">
+			<section class="card my-10 w-3/4 max-h-fit max-w-4xl card-bordered shadow-2xl w-auto bg-base-100 text-darkbrown">
+				<div class="card-body flex flex-col justify-center items-center text-center">
+					<h1 class="card-title text-3xl font-bold">Avatar the Last Airbender Database</h1>
+					<div class="flex flex-col items-center m-5">
+						<input type="text" id="characterName" placeholder="Character Name"class="input input-bordered border-base-200 border-4 input-darkbrown text-darkbrown placeholder:text-darkbrown w-full max-w-xs" />
+						<button class="btn bg-darkbrown text-base-100 mt-2" type="button" name="button">Get Character</button>
+					</div>
+					<div class="flex w-full">
+						<div class="w-1/2 flex items-center"><img class= "border-8 border-double border-darkbrown" src="img/atla.jpeg" alt="Avatar the Last Airbender"></div>
+						<div class="flex flex-col text-xl font-bold m-3 justify-center w-1/2 max-w-lg">
+							<div class="flex grid grid-cols-3 m-3"><h2 class="justify-self-start col-start-1">Name:</h2><h3 class="col-span-2 justify-self-center ml-2 text-neutral" id="name"></h3></div>
+							<div class="flex grid grid-cols-3 m-3"><h3 class="justify-self-start col-start-1">Allies:</h3><h3 class="col-span-2 justify-self-center ml-2 text-neutral" id="ally"></h3></div>
+							<div class="flex grid grid-cols-3 m-3"><h3 class="justify-self-start col-start-1">Enemies:</h3><h3 class="col-span-2 justify-self-center ml-2 text-neutral" id="enemy"></h3></div>
+							<div class="flex flex-col items-start m-3"><h3 class="justify-self-start">Affiliation:</h3><h3 class=" justify-self-center ml-5 w-2/3 text-neutral" id="affiliation"></h3></div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer footer-center flex justify-center p-4 bg-darkbrown text-base-200 mt-auto font-ancient tracking-wide">
+			<div class="justify-self-center">
+			  <p>Copyright © 2022 - All right reserved by ShaiTech; Designed by <a href="https://www.shailynmoore.com/">Shailyn Moore</a></p>
+			</div>
+			<div class="justify-self-end">
+				<a id="mute" class=" text-base-200 fa-solid fa-volume-high" onclick="muteOrPlay()"></a>
+			</div>
+			<audio class="audio" loop autoplay="autoplay" loop id="audioelement">
+				<source src="img/ATLASoundtrack.mp3" type="audio/mpeg"/>
+			</audio>
+		</footer>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>

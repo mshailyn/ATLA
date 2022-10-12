@@ -3,7 +3,7 @@ This is a small project for an Avatar the Last Airbender Database using informat
 
 **Link to project:** https://atla-db.netlify.app/
 
-![Picture of ATLA Database](img/homepage.png)
+![Picture of ATLA Database](img/pagescreenshot.png)
 
 ## How It's Made:
 
